@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background_gradient_start">#000000</color>
+    <color name="background_gradient_end">#DDDDDD</color>
+    <color name="fastlane_background">#000000</color>
+    <color name="search_opaque">#000000</color>
+    <color name="selected_background">#000000</color>
+    <color name="default_background">#3d3d3d</color>
+    <color name="settings_card_background">#0277BD</color>
+    <color name="info_bg_color">#F0400740</color>
+</resources>
