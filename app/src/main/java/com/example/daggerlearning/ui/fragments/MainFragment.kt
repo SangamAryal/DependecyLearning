@@ -11,26 +11,22 @@ import androidx.leanback.widget.ListRow
 import androidx.leanback.widget.ListRowPresenter
 import androidx.lifecycle.ViewModelProvider
 import com.example.daggerlearning.R
-import com.example.daggerlearning.application.MyApplication
 import com.example.daggerlearning.domain.model.movie.Result
 import com.example.daggerlearning.presentation.viewmodel.MovieViewModel
-import com.example.daggerlearning.presentation.viewmodel.MovieViewModelFactory
 import com.example.daggerlearning.ui.presenter.CardPresenter
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.Collections
 import javax.inject.Inject
 
+@AndroidEntryPoint
 class MainFragment : BrowseSupportFragment() {
 
     private lateinit var movieViewModel: MovieViewModel
 
-    @Inject
-    lateinit var movieViewModelFactory: MovieViewModelFactory
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setupUIElements()
-        (requireActivity().application as MyApplication).applicationComponent.inject(this)
-        movieViewModel = ViewModelProvider(this, movieViewModelFactory)[MovieViewModel::class.java]
+        movieViewModel = ViewModelProvider(this)[MovieViewModel::class.java]
         movieViewModel.fetchMovies()
         movieViewModel.movies.observe(this) { result ->
             if (result != null) {

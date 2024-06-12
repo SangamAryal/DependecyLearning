@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.google.devtools.ksp)
+    alias(libs.plugins.google.dagger.hilt)
 
 }
 
@@ -53,7 +54,6 @@ dependencies {
     implementation(libs.glide)
     implementation(libs.retrofit)
     implementation(libs.logging.interceptor)
-    implementation(libs.dagger)
-    ksp(libs.dagger.compiler)
-
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
 }
