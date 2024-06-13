@@ -1,7 +1,6 @@
 package com.example.daggerlearning.application
 
 import android.app.Application
-import com.example.daggerlearning.di.DaggerApplicationComponent
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp

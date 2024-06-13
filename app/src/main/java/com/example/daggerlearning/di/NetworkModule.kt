@@ -1,7 +1,7 @@
 package com.example.daggerlearning.di
 
 import com.example.daggerlearning.data.api.ApiService
-import com.example.daggerlearning.utils.Constants
+import com.example.daggerlearning.utils.Constants.BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -25,7 +25,7 @@ class NetworkModule {
         builder.addInterceptor(interceptor)
         val client = builder.build()
         return Retrofit.Builder()
-            .baseUrl(Constants.BASE_URL)
+            .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()
